@@ -7,7 +7,7 @@ function getTotalX(a, b) {
     
     
     //const factors = number => [...Array(number + 1).keys()].filter(i=>number % i === 0);
-    
+    // get all factors from array b
     for (let i = 0; i < b.length; i++) {
       for(let j = 0; j <= b[i]; j++) {
         if (b[i] % j === 0 ) {
@@ -23,7 +23,7 @@ function getTotalX(a, b) {
     }
     
     //console.log(factors)
-    
+    //filter all factors that work on all values
     for (var property in factors) {
       
       //console.log(property + " " + factors[property]);
@@ -33,21 +33,26 @@ function getTotalX(a, b) {
     }
   
     //console.log(filteredFactors);
+    //filter values from array a
     for (let i = 0; i < a.length; i++) {
       for (let j = 0; j < filteredFactors.length; j++) {
-        if (filteredFactors[j] % a[i] !== 0 ) {
-          filteredFactors.splice(j, 1)
-        }
+        
+         //console.log(filteredFactors.length)
+         //console.log(filteredFactors[j] + " % " + a[i] + " = " + filteredFactors[j] % a[i])
+         
+         filteredFactors = filteredFactors.filter(ele => ele % a[i] === 0);
+        
       }
     }
     
     
     
-    
+   
     console.log(filteredFactors)
     return filteredFactors
   }
   
+  getTotalX([2,6],[24,36])//2 -- 6 , 12
   getTotalX([2,4], [16, 32, 96])// 3 --- 4, 8 and 16
   getTotalX([3,4], [24,48]) // 2
   getTotalX([3,9,6], [36,72]) // 2
