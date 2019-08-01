@@ -16,6 +16,7 @@ function chocolateFeast(n, c, m) {
   
   console.log(wrapperLeft)
   //console.log(chocolateChange(chocolateCounter,initialWraps))
+  //return chocolateChange(chocolateCounter,initialWraps)
 }
 
 chocolateFeast(10, 2, 5);//6
