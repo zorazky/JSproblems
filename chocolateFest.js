@@ -1,22 +1,23 @@
 function chocolateFeast(n, c, m) {
+  
+  let count = 0;
+  let temp_count = Math.floor( n / c );
+  
+ 
+  
+      while( true ) {
+          let free_choco = temp_count + (count % m); 
+          count += temp_count;
+          
+          
+          if( free_choco < m ) {
+              break;
+          }
 
-  let dollars = n
-  let chocolateCost = c
-  let chocolateWrap = m
-  let initialWraps = Math.floor((dollars / chocolateCost) / chocolateWrap)
-  let chocolateCounter = n / c
-  let wrapperLeft = chocolateCounter > chocolateWrap ? chocolateCounter % chocolateWrap : 0
-  
-  
-  const chocolateChange = (cC, iW ) => {
-    
-    if (initialWraps + wrapperLeft )
-    return Math.floor(cC + iW)
-  }
-  
-  console.log(wrapperLeft)
-  //console.log(chocolateChange(chocolateCounter,initialWraps))
-  //return chocolateChange(chocolateCounter,initialWraps)
+          temp_count = Math.floor(free_choco / m);
+      }
+
+  return count;
 }
 
 chocolateFeast(10, 2, 5);//6
