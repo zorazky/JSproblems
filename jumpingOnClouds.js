@@ -12,7 +12,7 @@ function jumpingOnClouds(c) {
       if (c[i + 2] !== 1 && c[i + 2] <= c.length ) {
         i += 2
         counter++
-      } else if (c[i + 1] !== 1 && c[i + 2] <= c.length ) {
+      } else if (c[i + 1] !== 1 && c[i + 1] <= c.length ) {
         i += 1
         counter++
       } else {
