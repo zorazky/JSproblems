@@ -1,20 +1,21 @@
 function beautifulBinaryString(b) {
   
     if (b.indexOf('010') === -1) {
+      console.log(0)
       return 0
     }
     
     let count = 0;
     let position = b.indexOf('010');
-  
+    
     while (position !== -1) {
-      count++;
+      count++
+      b = b.replace("010", "011")
       position = b.indexOf('010', position + 2);
-      //console.log(position)
     }
-  
+    
     console.log(count)
-    return count - 1
+  
   }
   
   beautifulBinaryString("0101010");//2
