@@ -1,7 +1,8 @@
 function climbingLeaderboard(scores, alice) {
 
     let place = 1
-  
+    let places = []
+    
     const scoresUnique = scores.filter(function(item, index){
       return scores.indexOf(item) >= index;
     });
@@ -18,10 +19,12 @@ function climbingLeaderboard(scores, alice) {
         //console.log(place)
       }
       
+      places.push(place)
       console.log(place)
       place = 1
     })
     
+     return places
      
      
   }
